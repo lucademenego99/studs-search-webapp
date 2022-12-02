@@ -25,7 +25,7 @@
 
 .main-container .input-container {
     position: relative;
-    width: 13vw;
+    width: 280px;
     height: 45px;
 }
 
@@ -36,15 +36,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 10;
 }
 
 .main-container .input-container .btn img {
     transition: all 150ms ease-in-out;
     transform: scale(0.8);
-}
-
-.main-container .input-container .btn:hover img {
-    transform: scale(0.9);
 }
 
 .inside-neuro {
@@ -110,4 +107,9 @@
     border-radius: 100%;
     background: linear-gradient(135deg, #535353 0%, #4B4B4B 100%);
     box-shadow: -2px 2px 4px rgba(32, 32, 32, 0.2), 2px -2px 4px rgba(32, 32, 32, 0.2), -2px -2px 4px rgba(126, 126, 126, 0.9), 2px 2px 5px rgba(32, 32, 32, 0.9);
+}
+
+.main-container .input-container .btn:active {
+    background: linear-gradient(145deg, #555555, #474747);
+    box-shadow:  2px 2px 1px #3a3a3a, -2px -2px 1px #646464;
 }

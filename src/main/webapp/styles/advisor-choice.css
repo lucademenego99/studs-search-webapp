@@ -9,7 +9,7 @@
     padding: 2em 0.7em;
 }
 
-.student-courses-container {
+.student-advisors-container {
     width: 20vw;
     height: 50vh;
     display: flex;
@@ -22,7 +22,7 @@
     overflow: auto;
 }
 
-.student-courses-container ul {
+.student-advisors-container ul {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
     gap: 1em;
 }
 
-.student-courses-container ul li {
+.student-advisors-container ul li {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -39,20 +39,21 @@
     align-items: center;
 }
 
-.student-courses-container ul li p {
+.student-advisors-container ul li p {
     font-size: 0.85em;
     color: #ADADAD;
 }
 
-.student-courses-container .vote {
-    border-radius: 22px;
-    background: linear-gradient(135deg, #535353 0%, #4B4B4B 100%);
-    box-shadow: -2px 2px 4px rgba(32, 32, 32, 0.2), 2px -2px 4px rgba(32, 32, 32, 0.2), -2px -2px 4px rgba(126, 126, 126, 0.9), 2px 2px 5px rgba(32, 32, 32, 0.9);
+.student-advisors-container ul li div {
+    cursor: pointer;
+}
+
+.student-advisors-container .check {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 .student-information-container .matriculation {
@@ -90,7 +91,7 @@
 .choose-student-advisor {
     margin-top: 1.5em;
     height: 50px;
-    width: 100%;
+    width: 75%;
     cursor: pointer;
     color: #E6E6E6;
     font-weight: bold;

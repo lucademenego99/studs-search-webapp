@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles/student.css">
 </head>
 <body>
-<%@include file="background.jsp" %>
 <jsp:useBean id="studentAndCourses"
              class="it.unitn.disi.webarch.lucademenego.studssearch.backend.ejb.dtos.StudentAndCourses"
              scope="request"/>
@@ -41,9 +40,13 @@
                 </div>
             </div>
         </div>
-        <button class="btn outside-neuro choose-student-advisor">
-            Choose student advisor
-        </button>
+        <a href="<%= request.getContextPath() + "/advisor-choice?matriculation=" + studentAndCourses.getMatriculation() %>"
+           style="text-decoration: none"
+        >
+            <button class="btn outside-neuro choose-student-advisor">
+                Choose student advisor
+            </button>
+        </a>
     </div>
     <div class="col">
         <h4>Courses.</h4>
@@ -52,5 +55,9 @@
         </div>
     </div>
 </div>
+<button onclick="history.back()" class="btn outside-neuro back-btn">
+    <img src="assets/Back.svg" alt="Back to previous page icon button">
+</button>
+<%@include file="background.jsp" %>
 </body>
 </html>

@@ -6,7 +6,6 @@
     <%@include file="common.jsp" %>
 </head>
 <body>
-<%@include file="background.jsp" %>
 <div class="main-container">
     <h4>Search Student.</h4>
     <form class="input-container" method="get" action="${pageContext.servletContext.contextPath}/student">
@@ -16,5 +15,6 @@
         </button>
     </form>
 </div>
+<%@include file="background.jsp" %>
 </body>
 </html>
