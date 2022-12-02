@@ -1,0 +1,99 @@
+.student-information-container {
+    width: 20vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6em;
+    padding: 2em 0.7em;
+}
+
+.student-courses-container {
+    width: 20vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6em;
+    padding: 2em 2em;
+    color: white;
+    overflow: auto;
+}
+
+.student-courses-container ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.student-courses-container ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-courses-container ul li p {
+    font-size: 0.85em;
+    color: #ADADAD;
+}
+
+.student-courses-container .vote {
+    border-radius: 22px;
+    background: linear-gradient(135deg, #535353 0%, #4B4B4B 100%);
+    box-shadow: -2px 2px 4px rgba(32, 32, 32, 0.2), 2px -2px 4px rgba(32, 32, 32, 0.2), -2px -2px 4px rgba(126, 126, 126, 0.9), 2px 2px 5px rgba(32, 32, 32, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+}
+
+.student-information-container .matriculation {
+    padding: 1.1em 1.3em;
+    text-align: center;
+    letter-spacing: 0.415em;
+    border-radius: 22px;
+}
+
+.student-information-container .name-and-surname-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.student-information-container .input-container .input-text {
+    text-align: end;
+}
+
+.student-information-container .name-and-surname-container .name-surname-btn {
+    right: 0;
+    left: 15px;
+    width: 80px;
+    border-radius: 14px;
+    cursor: unset;
+}
+
+.student-information-container .name-and-surname-container .name-surname-btn p {
+    color: #E6E6E6;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+.choose-student-advisor {
+    margin-top: 1.5em;
+    height: 50px;
+    width: 20vw;
+    cursor: pointer;
+    color: #E6E6E6;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+}
