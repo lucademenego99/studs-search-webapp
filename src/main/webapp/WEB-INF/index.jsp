@@ -9,7 +9,7 @@
     <h4>Search Student.</h4>
     <form class="input-container" method="get" action="${pageContext.servletContext.contextPath}/student">
         <input class="disable-input-style inside-neuro input-text" type="text" id="matriculation" name="matriculation" placeholder="STUDENT ID" >
-        <%= request.getAttribute("error") != null ? "<p class='error'>" + request.getAttribute("error") + "</p>" : "" %>
+        <p class="error"><%= request.getAttribute("error") != null ? request.getAttribute("error") : "" %></p>
         <button class="btn" type="submit">
             <img src="assets/SearchIcon.svg" alt="Search Student icon button">
         </button>
