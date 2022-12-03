@@ -19,6 +19,7 @@ public class StudentServlet extends HttpServlet {
         try {
             matriculation = Integer.parseInt(request.getParameter("matriculation"));
         } catch (NumberFormatException e) {
+            request.setAttribute("error", "Error parsing the specified ID");
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
             return;
         }
@@ -29,6 +30,7 @@ public class StudentServlet extends HttpServlet {
             request.setAttribute("studentAndCourses", student);
             request.getRequestDispatcher("WEB-INF/student.jsp").forward(request, response);
         } else {
+            request.setAttribute("error", "No student found with the specified ID");
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
         }
     }
