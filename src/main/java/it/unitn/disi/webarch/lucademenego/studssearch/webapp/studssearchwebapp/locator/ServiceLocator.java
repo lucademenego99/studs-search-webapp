@@ -5,18 +5,40 @@ import jakarta.ejb.Stateful;
 import javax.naming.NamingException;
 import java.util.HashMap;
 
+/**
+ * Service Locator used to access beans exposed by Wildfly.
+ * It keeps a cache with the found objects, to prevent useless lookups
+ */
 public class ServiceLocator {
+    /**
+     * Cache of the looked up objects
+     */
     private static final HashMap<String, Object> cache;
+
+    /**
+     * Prefix common to all lookup strings
+     */
     private static final String ejbPrefix;
+
     static {
         cache = new HashMap<>();
         ejbPrefix = "ejb:/studs-search-backend-1.0-SNAPSHOT";
     }
 
+    /**
+     * Get a bean exposed by the Wildfly instance given its class
+     * @param bean class of the requested bean
+     * @return looked up bean
+     * @throws NamingException the bean was not found
+     */
     public static Object getBean(Class<?> bean) throws NamingException {
+        // Get the actual jndi string from the bean class (excluding the prefix)
         String beanName = getBeanName(bean);
+
+        // Check if the cache already contains the bean
         Object service = cache.get(beanName);
         if (service == null) {
+            // If the cache does not contain the bean, perform a lookup
             StudsContext context = new StudsContext(ejbPrefix);
             service = context.lookup(beanName);
             cache.put(beanName, service);

@@ -8,28 +8,28 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
+/**
+ * Servlet used to access basic student information
+ */
 @WebServlet(name = "StudentServlet", value = "/student")
 public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int matriculation;
         try {
-            Integer matriculation = Integer.parseInt(request.getParameter("matriculation"));
-
-            StudentInfoServicesBD studentInfoServicesBD = new StudentInfoServicesBD();
-            StudentAndCourses student = studentInfoServicesBD.getStudent(matriculation);
-            if (student != null) {
-                request.setAttribute("studentAndCourses", student);
-                request.getRequestDispatcher("WEB-INF/student.jsp").forward(request, response);
-            } else {
-                request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
-            }
+            matriculation = Integer.parseInt(request.getParameter("matriculation"));
         } catch (NumberFormatException e) {
             request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+            return;
         }
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        StudentInfoServicesBD studentInfoServicesBD = new StudentInfoServicesBD();
+        StudentAndCourses student = studentInfoServicesBD.getStudent(matriculation);
+        if (student != null) {
+            request.setAttribute("studentAndCourses", student);
+            request.getRequestDispatcher("WEB-INF/student.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("WEB-INF/index.jsp").forward(request, response);
+        }
     }
 }

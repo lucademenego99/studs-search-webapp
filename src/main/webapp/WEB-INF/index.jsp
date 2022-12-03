@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>studs-search</title>
     <%@include file="common.jsp" %>
 </head>
 <body>

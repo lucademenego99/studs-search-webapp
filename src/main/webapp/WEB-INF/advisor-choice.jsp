@@ -7,7 +7,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <title>Advisor Choice</title>
     <%@include file="common.jsp" %>
     <link rel="stylesheet" href="styles/advisor-choice.css">
 </head>

@@ -7,7 +7,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <html>
 <head>
-    <title>Student Page</title>
     <%@include file="common.jsp" %>
     <link rel="stylesheet" href="styles/student.css">
 </head>
@@ -41,7 +40,7 @@
             </div>
         </div>
         <a href="<%= request.getContextPath() + "/advisor-choice?matriculation=" + studentAndCourses.getMatriculation() %>"
-           style="text-decoration: none"
+           style="text-decoration: none; z-index: 10"
         >
             <button class="btn outside-neuro choose-student-advisor">
                 Choose student advisor

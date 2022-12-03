@@ -5,8 +5,18 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Properties;
 
+/**
+ * Context used to access the Wildfly client and perform lookup
+ */
 public class StudsContext {
+    /**
+     * Properties containing information to access Wildfly
+     */
     private final Properties properties;
+
+    /**
+     * Prefix common to all looked up objects
+     */
     private final String commonPrefix;
 
     public StudsContext(String commonPrefix) {

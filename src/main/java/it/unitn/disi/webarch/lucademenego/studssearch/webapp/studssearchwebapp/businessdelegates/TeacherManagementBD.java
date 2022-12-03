@@ -7,9 +7,19 @@ import it.unitn.disi.webarch.lucademenego.studssearch.webapp.studssearchwebapp.l
 
 import javax.naming.NamingException;
 
+/**
+ * Business delegate for the TeacherManagement Facade Bean
+ * It performs lookup and exposes the bean services
+ */
 public class TeacherManagementBD implements TeacherManagement {
+    /**
+     * Reference to the facade bean
+     */
     private final TeacherManagement facade;
 
+    /**
+     * Perform lookup using the ServiceLocator
+     */
     public TeacherManagementBD() {
         try {
             facade = (TeacherManagement) ServiceLocator.getBean(TeacherManagementBean.class);
@@ -18,6 +28,11 @@ public class TeacherManagementBD implements TeacherManagement {
         }
     }
 
+    /**
+     * Add a new teacher to the list of teachers
+     * @param teacherInformation Teacher to add
+     * @return The newly created teacher, or null if there was an error
+     */
     @Override
     public TeacherInformation addTeacher(TeacherInformation teacherInformation) {
         return facade.addTeacher(teacherInformation);
